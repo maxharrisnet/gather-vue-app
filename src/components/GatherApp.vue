@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-layout
       text-xs-center
       wrap
@@ -9,13 +9,13 @@
           :src="require('../assets/images/logo.png')"
           class="my-3"
           contain
-          height="200"
+          height="120"
         ></v-img>
       </v-flex>
 
       <v-flex mb-4>
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Gather The Crew.
+          Welcome
         </h1>
         <p class="subheading font-weight-regular">
           Get started by selecting a flight.
