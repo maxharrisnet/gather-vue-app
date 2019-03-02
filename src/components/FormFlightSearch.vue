@@ -3,12 +3,12 @@
     id="gtc-flight-search"
   >
     <v-layout justify-center wrap>
-      <v-flex xs12>
+      <v-flex xs12 md4>
         <v-input
           :messages="['Messages']"
           append-icon="search"
           >
-            Default Slot
+            Destination 1
         </v-input>
       </v-flex>
     </v-layout>
