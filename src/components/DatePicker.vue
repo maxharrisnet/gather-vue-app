@@ -1,6 +1,6 @@
 <template>
   <v-layout row wrap>
-    <v-flex xs12 sm6 md4>
+    <v-flex>
       <v-dialog
         ref="dialog"
         v-model="modal"

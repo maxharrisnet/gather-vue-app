@@ -8,6 +8,9 @@
         <DatePicker/>
         <DatePicker/>
       </v-flex>
+      <v-flex>
+        <v-btn @click="doFlightSearch()">Search Flights</v-btn>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -19,7 +22,9 @@ import DatePicker from './DatePicker.vue'
 export default {
   components: { Multiselect, DatePicker },
   methods: {
+    doFlightSearch () {
 
+    }
   },
   data: () => ({
     // Multiselect

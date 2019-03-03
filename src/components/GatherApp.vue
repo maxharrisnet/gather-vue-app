@@ -20,7 +20,7 @@
         <h3 class="subheading font-weight-regular">
           Get started by selecting a flight.
         </h3>
-        <v-btn @click="testRequest()">Test Request Data</v-btn>
+        <v-btn @click="skyScannerApiRequest()">Test Request Data</v-btn>
       </v-flex>
 
       <v-flex
@@ -43,14 +43,39 @@ export default {
     FormFlightSearch
   },
   methods: {
-    testRequest () {
+    skyScannerApiRequest () {
       var unirest = require('unirest');
-      var sky = unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/GBP/en-GB/?query=Vancouver")
-          .header("X-RapidAPI-Key", "4db6cd02cemsh00a5e165edf84e7p105a12jsndfa328027cc6")
-          .end(function (result) {
-            console.log(result.status, result.headers, result.body);
-          });
-      console.log(sky);
+
+      // var key = '4db6cd02cemsh00a5e165edf84e7p105a12jsndfa328027cc6;'
+      var locale = 'en-US'
+      var q = 'Vancouver'
+      // unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=' q '")
+      unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm")
+      .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
+      .end(function (result) {
+        console.log(result.status, result.headers, result.places);
+      });
+    },
+    skyScannerApiFlightSearch () {
+      var unirest = require('unirest');
+
+      unirest.post("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/pricing/v1.0")
+      .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
+      .header("Content-Type", "application/x-www-form-urlencoded")
+      .send("inboundDate=2020-01-10")
+      .send("cabinClass=business")
+      .send("children=0")
+      .send("infants=0")
+      .send("country=US")
+      .send("currency=USD")
+      .send("locale=en-US")
+      .send("originPlace=SFO-sky")
+      .send("destinationPlace=LHR-sky")
+      .send("outboundDate=2020-01-01")
+      .send("adults=1")
+      .end(function (result) {
+        // console.log(result.status, result.headers, result.body);
+      });
     }
   },
   data: () => ({
