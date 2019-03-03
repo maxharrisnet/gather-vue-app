@@ -1,17 +1,19 @@
 <template>
   <v-container id="flight-search-form" pa-3>
-    <v-layout row wrap>
-      <v-flex xs12 mb-3>
+    <v-layout justify-center row wrap mt-2>
+      <v-flex xs12 md4 px-4 py-2>
         <multiselect v-model="value" :options="options"></multiselect>
       </v-flex>
-      <v-flex xs12 md6 px-3 py-3>
+      <v-flex xs12 md3 px-4>
         <DatePicker/>
       </v-flex>
-      <v-flex xs12 md6 px-3 py-3>
+      <v-flex xs12 md3 px-4>
         <DatePicker/>
       </v-flex>
-      <v-flex xs12>
-        <v-btn light color="secondary" large round @click="doFlightSearch()">Search Flights</v-btn>
+      <v-flex xs12 md1>
+        <v-btn large icon raised color="primary" @click="doFlightSearch()">
+          <v-icon>search</v-icon>
+        </v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -32,7 +34,6 @@ export default {
     // Multiselect
     value: null,
     options: ['list', 'of', 'options'],
-    label: 'OKOK',
     // Validation
     valid: false,
     firstname: '',

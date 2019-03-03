@@ -23,7 +23,7 @@
       </v-flex>
       <v-flex xs12>
         <v-layout justify-center>
-          <v-flex md5>
+          <v-flex md12>
             <FormFlightSearch/>
           </v-flex>
         </v-layout>
@@ -46,11 +46,10 @@ export default {
       // var key = 'ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe;'
       var locale = 'en-US'
       var q = 'Vancouver'
-      // unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=' q '")
-      unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm")
+      unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=Vancouver")
       .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
       .end(function (result) {
-        console.log(result.status, result.headers, result.body);
+        console.log(result.status, result.body);
       });
     },
     skyScannerApiFlightSearch () {
