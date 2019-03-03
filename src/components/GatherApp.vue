@@ -46,14 +46,14 @@ export default {
     skyScannerApiRequest () {
       var unirest = require('unirest');
 
-      // var key = '4db6cd02cemsh00a5e165edf84e7p105a12jsndfa328027cc6;'
+      // var key = 'ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe;'
       var locale = 'en-US'
       var q = 'Vancouver'
       // unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=' q '")
       unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=Stockholm")
       .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
       .end(function (result) {
-        console.log(result.status, result.headers, result.places);
+        console.log(result.status, result.headers, result.body);
       });
     },
     skyScannerApiFlightSearch () {
@@ -74,7 +74,7 @@ export default {
       .send("outboundDate=2020-01-01")
       .send("adults=1")
       .end(function (result) {
-        // console.log(result.status, result.headers, result.body);
+        console.log(result.status, result.headers, result.body);
       });
     }
   },
