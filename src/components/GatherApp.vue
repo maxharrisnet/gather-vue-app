@@ -21,9 +21,9 @@
       <v-flex my-2 xs12>
         <v-btn @click="skyScannerApiFlightSearch()">Test Request Data</v-btn>
       </v-flex>
-      <v-flex xs12 mb-5>
+      <v-flex xs12>
         <v-layout justify-center>
-          <v-flex md6>
+          <v-flex md5>
             <FormFlightSearch/>
           </v-flex>
         </v-layout>
