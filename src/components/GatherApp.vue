@@ -1,9 +1,6 @@
 <template>
   <v-container fluid>
-    <v-layout
-      text-xs-center
-      wrap
-    >
+    <v-layout text-xs-center wrap>
       <v-flex xs12>
         <v-img
           :src="require('../assets/images/logo.png')"
@@ -13,24 +10,22 @@
         ></v-img>
       </v-flex>
 
-      <v-flex mb-4>
+      <v-flex mb-2>
         <h1 class="display-2 font-weight-bold mb-3">
           Welcome
         </h1>
         <h3 class="subheading font-weight-regular">
           Get started by selecting a flight.
         </h3>
-        <v-btn @click="skyScannerApiRequest()">Test Request Data</v-btn>
-        <v-btn @click="skyScannerApiFlightSearch()">Test Request Data</v-btn>
-
       </v-flex>
-
-      <v-flex
-        xs12
-        mb-5
-      >
+      <v-flex my-2 xs12>
+        <v-btn @click="skyScannerApiFlightSearch()">Test Request Data</v-btn>
+      </v-flex>
+      <v-flex xs12 mb-5>
         <v-layout justify-center>
-          <FormFlightSearch/>
+          <v-flex md6>
+            <FormFlightSearch/>
+          </v-flex>
         </v-layout>
       </v-flex>
     </v-layout>

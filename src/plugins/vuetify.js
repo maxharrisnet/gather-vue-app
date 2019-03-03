@@ -6,14 +6,12 @@ import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify, {
   theme: {
-    // primary: colors.deep-purple.base,
-    // toolbar: colors.deep-purple.base,
-    // secondary: colors.blue.base,
-    // accent: colors.pink.base,
-    // error: colors.red.base,
-    // warning: colors.orange.base,
-    // info: colors.blue-grey.base,
-    // success: colors.green.base
-  },
-  iconfont: 'md'
+    "primary": "#7b1fa2",
+    "secondary": "#26c6da",
+    "accent": "#ffd740",
+    "error": "#ef5350",
+    "info": "#29b6f6",
+    "success": "#00e676",
+    "warning": "#ffca28"
+  }
 })

@@ -1,15 +1,17 @@
 <template>
-  <v-container id="gtc-flight-search">
-    <v-layout justify-center wrap>
-      <v-flex xs md6>
+  <v-container id="flight-search-form" pa-3>
+    <v-layout row wrap>
+      <v-flex xs12 mb-3>
         <multiselect v-model="value" :options="options"></multiselect>
       </v-flex>
-      <v-flex xs12 md6>
-        <DatePicker/>
+      <v-flex xs12 md6 px-3 py-3>
         <DatePicker/>
       </v-flex>
-      <v-flex>
-        <v-btn @click="doFlightSearch()">Search Flights</v-btn>
+      <v-flex xs12 md6 px-3 py-3>
+        <DatePicker/>
+      </v-flex>
+      <v-flex xs12>
+        <v-btn light color="secondary" large round @click="doFlightSearch()">Search Flights</v-btn>
       </v-flex>
     </v-layout>
   </v-container>
