@@ -45,10 +45,16 @@ export default {
       // var locale = 'en-US'
       // var q = 'Vancouver'
       unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=Vancouver")
-      .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
-      .end(function (body) {
+      .headers({
+        'Accept': 'application/json',
+        "X-RapidAPI-Key": "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe"
+      })
+      .end(function (response, result, body) {
         // console.log(result.status, result.body);
-        console.log(body.json);
+        console.log('#response: ' + response);
+        console.log('#responsebody: ' + response.body);
+        console.log('#resultbody: ' + result.body);
+        console.log('#json: ' + response.json);
       });
     },
     skyScannerApiFlightSearch () {
