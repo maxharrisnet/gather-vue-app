@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import './plugins/vuetify'
 import Vuetify from 'vuetify'
-
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
 
 Vue.config.productionTip = false

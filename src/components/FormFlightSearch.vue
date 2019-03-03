@@ -1,20 +1,12 @@
 <template>
   <v-container id="gtc-flight-search">
     <v-layout justify-center wrap>
-      <v-flex xs12 md4>
-        <v-input
-          :messages="['Messages']"
-          append-icon="search"
-          >
-            Destination
-        </v-input>
-      </v-flex>
-      <v-flex xs12 md4>
-        <DatePicker/>
-        <DatePicker/>
-      </v-flex>
-      <v-flex>
+      <v-flex xs md6>
         <multiselect v-model="value" :options="options"></multiselect>
+      </v-flex>
+      <v-flex xs12 md6>
+        <DatePicker/>
+        <DatePicker/>
       </v-flex>
     </v-layout>
   </v-container>

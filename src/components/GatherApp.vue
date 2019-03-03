@@ -20,6 +20,7 @@
         <h3 class="subheading font-weight-regular">
           Get started by selecting a flight.
         </h3>
+        <v-btn @click="testRequest()">Test Request Data</v-btn>
       </v-flex>
 
       <v-flex
@@ -40,6 +41,17 @@ import FormFlightSearch from './FormFlightSearch.vue'
 export default {
   components: {
     FormFlightSearch
+  },
+  methods: {
+    testRequest () {
+      var unirest = require('unirest');
+      var sky = unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/GBP/en-GB/?query=Vancouver")
+          .header("X-RapidAPI-Key", "4db6cd02cemsh00a5e165edf84e7p105a12jsndfa328027cc6")
+          .end(function (result) {
+            console.log(result.status, result.headers, result.body);
+          });
+      console.log(sky);
+    }
   },
   data: () => ({
     ecosystem: [
