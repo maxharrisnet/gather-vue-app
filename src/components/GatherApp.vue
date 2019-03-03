@@ -21,6 +21,8 @@
           Get started by selecting a flight.
         </h3>
         <v-btn @click="skyScannerApiRequest()">Test Request Data</v-btn>
+        <v-btn @click="skyScannerApiFlightSearch()">Test Request Data</v-btn>
+
       </v-flex>
 
       <v-flex
