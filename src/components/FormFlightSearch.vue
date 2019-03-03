@@ -1,7 +1,5 @@
 <template>
-  <v-container
-    id="gtc-flight-search"
-  >
+  <v-container id="gtc-flight-search">
     <v-layout justify-center wrap>
       <v-flex xs12 md4>
         <v-input
@@ -12,8 +10,8 @@
         </v-input>
       </v-flex>
       <v-flex xs12 md4>
-
-        <!-- <v-date-picker v-model="picker" :landscape="landscape" :reactive="reactive"></v-date-picker> -->
+        <DatePicker/>
+        <DatePicker/>
       </v-flex>
       <v-flex>
         <multiselect v-model="value" :options="options"></multiselect>
@@ -24,13 +22,18 @@
 
 <script>
 import Multiselect from 'vue-multiselect'
+import DatePicker from './DatePicker.vue'
 
 export default {
-  components: { Multiselect },
+  components: { Multiselect, DatePicker },
+  methods: {
+
+  },
   data: () => ({
     // Multiselect
     value: null,
     options: ['list', 'of', 'options'],
+    label: 'OKOK',
     // Validation
     valid: false,
     firstname: '',
