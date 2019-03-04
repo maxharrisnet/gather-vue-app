@@ -45,8 +45,8 @@ export default {
       unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=Vancouver")
       .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
       .header("Accept", "application/json")
-      .as.json(function (response) {
-        console.log('#response: ' + response);
+      .as.json(function (response, result) {
+        console.log(result.status, result.headers, result.body);
         console.log('#responsehead: ' + response.head);
         console.log('#responsebody: ' + response.body);
         console.log('#json: ' + response.json);
