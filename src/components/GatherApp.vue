@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid v-bind:style="{ backgroundImage: 'url(' + bgImg + ')' }">
+  <v-container fluid v-bind:class="{ backgroundImage: bgImg, backgroundSize: 'cover' }">
     <v-layout text-xs-center wrap>
       <v-flex xs12>
         <v-img
@@ -78,7 +78,6 @@ export default {
     }
   },
   data: () => ({
-    bgImg: '',
     ecosystem: [
       {
         text: 'vuetify-loader',
