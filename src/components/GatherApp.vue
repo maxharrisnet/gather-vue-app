@@ -40,38 +40,41 @@ export default {
     FormFlightSearch
   },
   methods: {
-    skyScannerApiRequest () {
-      var api_url = 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/'
-      var api_key = 'ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe'
-      var options = {
-      	method: 'GET',
-        url: api_url,
-        headers: {
-          'cache-control': 'no-cache',
-          'Content-Type': 'application/json',
-          'X-RapidAPI-Key': api_key,
-          'header1': 'header-value-1'
-        },
-        qs: {
-          query: 'Vancouver'
-        }
-      };
-
-      request(options, function (error, response, body) {
-        if (error) throw new Error(error);
-        console.log(body);
-      });
-    },
     // skyScannerApiRequest () {
-    //   var unirest = require('unirest');
-    //   unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=Vancouver")
-    //   .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
-    //   .header("Accept", "application/json")
-    //   .end(function (response, body) {
-    //     console.log('#response: ' + response);
-    //     console.log('#responsebody: ' + body);
+    //   var api_url = 'https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/'
+    //   var api_key = 'ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe'
+    //   var options = {
+    //   	method: 'GET',
+    //     url: api_url,
+    //     headers: {
+    //       'cache-control': 'no-cache',
+    //       'Content-Type': 'application/json',
+    //       'X-RapidAPI-Key': api_key,
+    //       'header1': 'header-value-1'
+    //     },
+    //     qs: {
+    //       query: 'Vancouver'
+    //     }
+    //   }
+    //
+    //   import axios from 'axios';
+    //   axios.get(api_url, {headers: 'X-RapidAPI-Key': api_key, })
+    //
+    //   request(options, function (error, response, body) {
+    //     if (error) throw new Error(error);
+    //     console.log(body);
     //   });
     // },
+    skyScannerApiRequest () {
+      var unirest = require('unirest');
+      unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=Vancouver")
+      .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
+      .header("Accept", "application/json")
+      .end(function (response) {
+        console.log('#response: ' + response);
+        console.log('#responsebody: ' + response.data);
+      });
+    },
     skyScannerApiFlightSearch () {
       var unirest = require('unirest');
 
