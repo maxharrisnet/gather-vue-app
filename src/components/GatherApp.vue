@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid v-bind:class="{ backgroundImage: bgImg, backgroundSize: 'cover' }">
+  <v-container fluid>
     <v-layout text-xs-center wrap>
-      <v-flex xs12>
+      <v-flex xs12 my-3>
         <v-img
           :src="require('../assets/images/logo.png')"
           class="my-3"
@@ -42,15 +42,12 @@ export default {
   methods: {
     skyScannerApiRequest () {
       var unirest = require('unirest');
-      // var locale = 'en-US'
-      // var q = 'Vancouver'
       unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=Vancouver")
-      .headers({
-        'Accept': 'application/json',
-        "X-RapidAPI-Key": "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe"
-      })
-      .end(function (response, result, body) {
+      .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
+      .header("Accept", "application/json")
+      .as.json(function (response) {
         console.log('#response: ' + response);
+        console.log('#responsehead: ' + response.head);
         console.log('#responsebody: ' + response.body);
         console.log('#json: ' + response.json);
       });

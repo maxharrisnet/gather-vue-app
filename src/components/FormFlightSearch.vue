@@ -11,7 +11,7 @@
         <DatePicker/>
       </v-flex>
       <v-flex xs12 md1>
-        <v-btn large icon raised color="primary" @click="doFlightSearch()">
+        <v-btn large icon color="white primary--text" @click="doFlightSearch()">
           <v-icon>search</v-icon>
         </v-btn>
       </v-flex>

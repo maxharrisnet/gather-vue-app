@@ -1,9 +1,6 @@
 <template>
-  <v-app
-    v-bind:class="bg-full"
-    v-bind:style="{ backgroundImage: bgImg }"
-  >
-    <v-toolbar app dark color="primary">
+  <v-app dark class="primary">
+    <v-toolbar app dark color="white primary--text">
       <v-toolbar-title class="headline text-uppercase">
         <span>Gather The Crew</span>
       </v-toolbar-title>
