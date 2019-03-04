@@ -45,9 +45,9 @@ export default {
       unirest.get("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/CA/USD/en-USD/?query=Vancouver")
       .header("X-RapidAPI-Key", "ae26af5873msh2e66fec7b4b2261p18cd99jsn807ccf554efe")
       .header("Accept", "application/json")
-      .end(function (response) {
-        console.log('#responsebody: ' + response);
-        console.log('#responsebody: ' + response.body);
+      .end(function (response, body) {
+        console.log('#response: ' + response);
+        console.log('#responsebody: ' + body);
       });
     },
     skyScannerApiFlightSearch () {
